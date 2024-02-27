@@ -23,7 +23,6 @@ html,body{
   }
   body::-webkit-scrollbar-thumb {
     background-color: #2c0be4;
-  
     border-radius: 50px;
   }
 /* ------------------------------- NAVBAR CSS -------------------------------------- */
