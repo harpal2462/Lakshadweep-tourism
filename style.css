@@ -1,0 +1,482 @@
+/* BOILER PLATE FOR CSS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    color: white;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+/* ------------------------------- NAVBAR CSS -------------------------------------- */
+#nav{
+    /* background-color: red; */
+    height: 135px;
+    width: 100%;
+    padding: 0px 120px;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    position: fixed;
+    z-index: 99;
+}
+#nav img{
+    height: 5.5vw;
+    border-radius: 25px;
+}
+#nav h4{
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 1.15vw;
+}
+/* ------------------------------- VIDEO CSS -------------------------------------- */
+
+video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+    position: fixed;
+}
+/* ------------------------------- MAIN CSS -------------------------------------- */
+
+#main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.333);
+}
+
+/* ------------------------------- PAGE1 CSS -------------------------------------- */
+#page1{
+    /* background-color: rgb(123, 6, 240); */
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+#page1 #arrow{
+    background-color:transparent;
+    border:2px solid #1ac4ef;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left:-3%;
+    bottom: 0%;
+    transition: all ease 0.5s;
+}
+#page1 #arrow i {
+    font-size: 59px;
+    font-weight: 100;
+}
+#page1 #arrow:hover{
+    scale: 0.4;
+    background-color:#1ac4ef;
+}
+#page1 h1{
+    font-size: 140px;
+    font-weight: 900; 
+    margin-top: 150px;
+    position: relative;
+    color: #b4eed7;
+}
+#page1 h1::before{
+    content:"DREAM. ENJOY. EXPLORE.";
+    position: absolute;
+    color: rgb(8, 2, 96);
+    top: -8px;
+    left: -8px;
+    z-index: -1;
+    -webkit-text-stroke: 2px #012020;
+}
+#page1 h2{
+    font-size: 30px;
+    font-weight: 800;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+}
+#page1 p{
+    font-size: 20px;
+    font-weight: 500;
+    width: 50%;
+}
+
+/* ------------------------------- CURSOR CSS -------------------------------------- */
+
+#cursor{
+    background-color: #b4eed7;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+#cursor-blur{
+    background-color: #1c7c9944;
+    height: 550px;
+    width: 550px;
+    border-radius: 50%;
+    position: fixed;
+    filter:blur(40px);
+    z-index: 9;
+}
+/* ------------------------------- PAGE2 CSS -------------------------------------- */
+
+#page2{
+    /* background-color: blue; */
+    min-height: 30vh;
+    width: 100%;
+}
+#scroller{
+    /* background-color: red; */
+    white-space:nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+#scroller::-webkit-scrollbar{
+    display: none;
+}
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 40s;
+    animation-timing-function:linear;
+    animation-iteration-count: infinite;
+}
+#scroller-in h4{
+    display: inline-block;
+    font-size: 150px;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-left: 20px;
+    font-family:sans-serif;
+    transition:all linear 0.3s;
+    color: black;
+    -webkit-text-stroke: 1px #d7eef5;
+
+}
+#scroller h4:hover{
+    color: #b4eed7;
+    -webkit-text-stroke: 2px #d7eef5;
+}
+/* ------------------------------- CSS FOR ANIMATION FOR INFINTE HORIZONTAL SCROLLER -------------------------------------- */
+
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+#about-us{
+    /* background-color: orange; */
+    height: 40vh;
+    width: 100%;
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    z-index: 10;
+}
+#about-us img{
+    height: 260px;
+    width: 220px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+/* ------------------------------- ABOUT US CSS -------------------------------------- */
+
+#about-us-in{
+    /* background-color: aqua; */
+    width: 50%;
+    text-align: center;
+}
+#about-us-in h3{
+    font-size:54px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+#about-us-in p{
+    font-size: 20px;
+    line-height: 36px;
+}
+
+/* ------------------------------- 3 CARDS ON PAGE2 CSS -------------------------------------- */
+
+#cards-container{
+    /* background-color:darkred; */
+    margin-top: 60px;
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+    position: relative;
+    z-index: 10;
+}
+#cards-container img{
+    /* background-color: blue; */
+    height: 170px;
+    width: 170px;
+    position: absolute;
+    top: -25px;
+    left: 150px;
+    z-index: -1;
+
+}
+.card{
+    /* background-color: chartreuse; */
+    height: 80%;
+    width: 22%;
+    border-radius: 20px;
+    background-size: cover;
+    overflow: hidden;
+    background-position: center;
+    transition: all ease 0.6s;
+    position: relative;
+}
+.top{
+    position: absolute;
+    font-size: 43px;
+    font-weight: 800;
+    top: 70%;   
+    left: 2%;
+}
+.overlay{
+    background-color:#b4eed7;
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    padding-top: 80px;
+    opacity: 0;
+    transition: all ease 0.6s;
+}
+.overlay h4{
+    color: black;
+    font-size: 40px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+.overlay p{
+    color: black;
+    font-size: 21px;
+    font-weight: 500;
+    margin: 15px;
+}
+#card1{
+    background-image: url("Assests/card1.jpeg");
+}
+#card2{
+    background-image: url("Assests/card2.jpg");
+}
+#card3{
+    background-image: url("Assests//card3.jpg");
+}
+.card:hover .overlay{
+    opacity: 1;
+}
+.card:hover .top{
+    opacity: 0;
+}
+.card:hover{
+    transform: rotate3d(-1,1,0,20deg);
+}
+
+/* ------------------------------- SIGNUP PAGE NEWS CSS -------------------------------------- */
+
+#green-div{
+    /* background-color: chocolate; */
+    background: linear-gradient(to right bottom,#3bdbdb,#0423d2d7);
+    height: 40vh;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content:space-between;
+}
+#green-div h4{
+    width: 45%;
+    line-height: 50px;
+    color: black;
+    text-align: center;
+    font-size: 37px;
+    font-weight: 900;
+}
+
+.green-img{
+    /* background-color: azure; */
+    height: 100%;
+    object-fit:cover;
+    width: 14%;
+}
+
+/* ------------------------------- PAGE3 CSS -------------------------------------- */
+
+#page3{
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+#page3 p{
+    font-size: 40px;
+    font-weight: 700;
+    width: 65%;
+    text-align: center;
+    line-height: 55px;
+}
+#page3 img{
+    position: absolute;
+    height: 60px;
+}
+#colon1{
+    top: 20%;
+    left: 12%;
+}
+#colon2{
+    right: 12%;
+    bottom: 20%;
+}
+
+/* ------------------------------- PAGE4 CSS -------------------------------------- */
+
+#page4{
+    /* background-color: aqua; */
+    min-height: 50vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+}
+#page4-h1{
+    font-size: 55px;
+    font-weight: 900;
+    position: absolute;
+    top: 9%;
+    left: 3%;
+    font-family:sans-serif; 
+    color: black;
+    -webkit-text-stroke:1px #fff;
+}
+
+.p4card{
+    height: 180px;
+    width: 390px;
+    border-radius: 20px;    
+    overflow: hidden; 
+    position: relative;  
+}
+.p4card h2{
+    height: 100%;
+    width: 100%;
+    background-color:#60e2aebb;
+    position: absolute;
+    font-size: 40px;
+    font-weight: 900;
+    color: black;
+    text-align: center;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all ease 0.6s;
+}
+.p4card img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    transition: all ease 0.5s;
+    scale: 1.1;
+}
+.p4card:hover h2{
+    color: white;
+    background-color: transparent;
+}
+.p4card:hover img{
+    scale: 1;
+}
+
+/* ------------------------------- FOOTER CSS -------------------------------------- */
+
+#footer{
+    height: 45vh;
+    width: 100%;
+    background: linear-gradient(to left bottom, #71d7e0d0 60%, #030770 80%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6.5vw;
+    padding: 0 100px;
+}
+#footer >img{
+    position: absolute;
+    left: 1%;
+    height: 100%;
+}
+#f1 img{
+    height: 170px;
+    border-radius: 45px;
+    opacity: 0.9;
+    /* margin-left: -150px; */
+}
+#f1,
+#f2,
+#f3,
+#f4{
+    width: fit-content;
+    position: relative;
+    z-index: 99;
+    /* background-color: red; */
+}
+
+#f2 h3{
+    font-size: 2vw;
+    white-space: nowrap;
+    color: black;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+#f3 h3{
+    font-size: 2vw;
+    white-space: nowrap;
+    color: black;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+#f4 h4{
+    font-size: 2.3vh;
+    white-space: nowrap;
+    color: black;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+#f5 h6{
+    position: absolute;
+    left: 7%;
+    bottom: 9%;
+    display: inline-block;
+    color: rgb(237, 242, 247);
+    font-size: 15px;
+    font-weight: 550;
+}
