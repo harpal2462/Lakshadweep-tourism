@@ -1,5 +1,5 @@
 # Lakshadweep-tourism
-
+<h2>Website is live on https://harpal2462.github.io/Lakshadweep-tourism/</h2>
 <ul>
   <li>Developed: Animated and Interactive Website utilizing HTML, CSS, JS and GSAP captivating
       users with seamless transitions and eye-popping effects.
