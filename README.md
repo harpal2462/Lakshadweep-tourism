@@ -1,9 +1,10 @@
 # Lakshadweep-tourism
 <h2>Website is live on https://harpal2462.github.io/Lakshadweep-tourism/</h2>
 <span> 
-  Checkout PageSpeed Insights : <a href="https://pagespeed.web.dev/analysis/https-harpal2462-github-io-Lakshadweep-tourism/uvbjcjaba5?form_factor=desktop">Here</a>
+  Checkout PageSpeed Insights : <a href="https://pagespeed.web.dev/analysis/https-harpal2462-github-io-Lakshadweep-tourism/uvbjcjaba5?form_factor=desktop" target="_blank">Here</a>
 </span>
-<!-- <img src="for readme/6.png" alt="png6" /> -->
+<br></br>
+<img src="for readme/6.png" alt="png6" />
 <h3>Use Pc/Laptop for Best Experience</h3>
 <ul>
   <li>Developed: Animated and Interactive Website utilizing HTML, CSS, JS and GSAP captivating
