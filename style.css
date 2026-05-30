@@ -3,12 +3,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Montserrat";
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     color: white;
 }
 html,body{
     height: 100%;
     width: 100%;
+    overflow-x: hidden;
 }
 
 *::selection {
@@ -28,24 +29,42 @@ html,body{
 /* ------------------------------- NAVBAR CSS -------------------------------------- */
 #nav{
     /* background-color: red; */
-    height: 135px;
+    height: clamp(70px, 10vw, 135px);
     width: 100%;
-    padding: 0px 120px;
+    padding: 0px clamp(20px, 8vw, 120px);
     display: flex;
     align-items: center;
-    gap: 80px;
+    gap: clamp(15px, 5vw, 80px);
     position: fixed;
     z-index: 99;
 }
 #nav img{
-    height: 5.5vw;
+    height: clamp(40px, 5.5vw, 80px);
     border-radius: 25px;
 }
 #nav h4{
     text-transform: uppercase;
     font-weight: 500;
-    font-size: 1.15vw;
+    font-size: clamp(11px, 1.15vw, 16px);
 }
+
+/* ------------------------------- HAMBURGER MENU CSS -------------------------------------- */
+#menu-btn{
+    display: none;
+    cursor: pointer;
+    z-index: 101;
+    margin-left: auto;
+}
+#menu-btn i{
+    font-size: 28px;
+    color: white;
+}
+#nav-links{
+    display: flex;
+    align-items: center;
+    gap: clamp(15px, 5vw, 80px);
+}
+
 /* ------------------------------- VIDEO CSS -------------------------------------- */
 
 video{
@@ -74,12 +93,13 @@ video{
     flex-direction: column;
     text-align: center;
     z-index: 10;
+    padding: 0 20px;
 }
 #page1 #arrow{
     background-color:transparent;
     border:2px solid #1ac4ef;
-    height: 200px;
-    width: 200px;
+    height: clamp(80px, 14vw, 200px);
+    width: clamp(80px, 14vw, 200px);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -90,7 +110,7 @@ video{
     transition: all ease 0.5s;
 }
 #page1 #arrow i {
-    font-size: 59px;
+    font-size: clamp(24px, 4vw, 59px);
     font-weight: 100;
 }
 #page1 #arrow:hover{
@@ -98,9 +118,9 @@ video{
     background-color:#1ac4ef;
 }
 #page1 h1{
-    font-size: 140px;
+    font-size: clamp(36px, 9vw, 140px);
     font-weight: 900; 
-    margin-top: 150px;
+    margin-top: clamp(80px, 10vw, 150px);
     position: relative;
     color: #b4eed7;
 }
@@ -108,22 +128,22 @@ video{
     content:"DREAM. ENJOY. EXPLORE.";
     position: absolute;
     color: rgb(8, 2, 96);
-    top: -8px;
-    left: -8px;
+    top: clamp(-4px, -0.5vw, -8px);
+    left: clamp(-4px, -0.5vw, -8px);
     z-index: -1;
     -webkit-text-stroke: 2px #012020;
 }
 #page1 h2{
-    font-size: 30px;
+    font-size: clamp(16px, 2.5vw, 30px);
     font-weight: 800;
     margin-top: 10px;
     margin-bottom: 20px;
 
 }
 #page1 p{
-    font-size: 20px;
+    font-size: clamp(14px, 1.5vw, 20px);
     font-weight: 500;
-    width: 50%;
+    width: min(90%, 700px);
 }
 
 /* ------------------------------- CURSOR CSS -------------------------------------- */
@@ -135,6 +155,7 @@ video{
     border-radius: 50%;
     position: fixed;
     z-index: 99;
+    pointer-events: none;
 }
 #cursor-blur{
     background-color: #1c7c9944;
@@ -144,6 +165,7 @@ video{
     position: fixed;
     filter:blur(40px);
     z-index: 9;
+    pointer-events: none;
 }
 /* ------------------------------- PAGE2 CSS -------------------------------------- */
 
@@ -173,14 +195,15 @@ video{
 }
 #scroller-in h4{
     display: inline-block;
-    font-size: 150px;
+    font-size: clamp(40px, 10vw, 150px);
     font-weight: 900;
     text-transform: uppercase;
     margin-left: 20px;
-    font-family:sans-serif;
+    font-family:Montserrat;
     transition:all linear 0.3s;
     color: black;
-    -webkit-text-stroke: 1px #d7eef5;
+    -webkit-text-stroke: 3px #d7eef5;
+    paint-order: stroke fill;
 
 }
 #scroller h4:hover{
@@ -200,20 +223,22 @@ video{
 
 #about-us{
     /* background-color: orange; */
-    height: 40vh;
+    min-height: 40vh;
     width: 100%;
-    padding: 0 50px;
+    padding: 30px 50px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     position: relative;
     z-index: 10;
+    gap: 20px;
 }
 #about-us img{
     height: 260px;
     width: 220px;
     border-radius: 20px;
     object-fit: cover;
+    flex-shrink: 0;
 }
 /* ------------------------------- ABOUT US CSS -------------------------------------- */
 
@@ -221,15 +246,16 @@ video{
     /* background-color: aqua; */
     width: 50%;
     text-align: center;
+    flex-shrink: 1;
 }
 #about-us-in h3{
-    font-size:54px;
+    font-size: clamp(24px, 4vw, 54px);
     font-weight: 800;
-    margin-bottom: 30px;
+    margin-bottom: clamp(15px, 2vw, 30px);
 }
 #about-us-in p{
-    font-size: 20px;
-    line-height: 36px;
+    font-size: clamp(14px, 1.5vw, 20px);
+    line-height: clamp(24px, 2.5vw, 36px);
 }
 
 /* ------------------------------- 3 CARDS ON PAGE2 CSS -------------------------------------- */
@@ -237,14 +263,16 @@ video{
 #cards-container{
     /* background-color:darkred; */
     margin-top: 60px;
-    height: 80vh;
+    min-height: 80vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 70px;
+    gap: clamp(20px, 5vw, 70px);
     position: relative;
     z-index: 10;
+    padding: 20px;
+    flex-wrap: wrap;
 }
 #cards-container img{
     /* background-color: blue; */
@@ -258,18 +286,19 @@ video{
 }
 .card{
     /* background-color: chartreuse; */
-    height: 80%;
-    width: 22%;
+    height: clamp(350px, 60vh, 80vh);
+    width: clamp(260px, 22%, 400px);
     border-radius: 20px;
     background-size: cover;
     overflow: hidden;
     background-position: center;
     transition: all ease 0.6s;
     position: relative;
+    flex-shrink: 0;
 }
 .top{
     position: absolute;
-    font-size: 43px;
+    font-size: clamp(20px, 3vw, 43px);
     font-weight: 800;
     top: 70%;   
     left: 2%;
@@ -285,13 +314,13 @@ video{
 }
 .overlay h4{
     color: black;
-    font-size: 40px;
+    font-size: clamp(24px, 3vw, 40px);
     font-weight: 900;
     margin-bottom: 20px;
 }
 .overlay p{
     color: black;
-    font-size: 21px;
+    font-size: clamp(15px, 1.5vw, 21px);
     font-weight: 500;
     margin: 15px;
 }
@@ -319,18 +348,19 @@ video{
 #green-div{
     /* background-color: chocolate; */
     background: linear-gradient(to right bottom,#3bdbdb,#0423d2d7);
-    height: 40vh;
+    min-height: 40vh;
     display: flex;
     position: relative;
     align-items: center;
     justify-content:space-between;
+    padding: 20px;
 }
 #green-div h4{
     width: 45%;
-    line-height: 50px;
+    line-height: clamp(30px, 4vw, 50px);
     color: black;
     text-align: center;
-    font-size: 37px;
+    font-size: clamp(18px, 3vw, 37px);
     font-weight: 900;
 }
 
@@ -339,28 +369,30 @@ video{
     height: 100%;
     object-fit:cover;
     width: 14%;
+    flex-shrink: 0;
 }
 
 /* ------------------------------- PAGE3 CSS -------------------------------------- */
 
 #page3{
-    height: 80vh;
+    min-height: 80vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    padding: 60px 20px;
 }
 #page3 p{
-    font-size: 40px;
+    font-size: clamp(18px, 3.5vw, 40px);
     font-weight: 700;
-    width: 65%;
+    width: min(90%, 900px);
     text-align: center;
-    line-height: 55px;
+    line-height: clamp(28px, 4.5vw, 55px);
 }
 #page3 img{
     position: absolute;
-    height: 60px;
+    height: clamp(30px, 5vw, 60px);
 }
 #colon1{
     top: 20%;
@@ -381,10 +413,12 @@ video{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 70px;
+    gap: clamp(20px, 5vw, 70px);
+    padding: 80px 20px 40px;
+    flex-wrap: wrap;
 }
 #page4-h1{
-    font-size: 55px;
+    font-size: clamp(24px, 4vw, 55px);
     font-weight: 900;
     position: absolute;
     top: 9%;
@@ -396,7 +430,7 @@ video{
 
 .p4card{
     height: 180px;
-    width: 390px;
+    width: clamp(280px, 30%, 390px);
     border-radius: 20px;    
     overflow: hidden; 
     position: relative;  
@@ -406,7 +440,7 @@ video{
     width: 100%;
     background-color:#60e2aebb;
     position: absolute;
-    font-size: 40px;
+    font-size: clamp(22px, 3vw, 40px);
     font-weight: 900;
     color: black;
     text-align: center;
@@ -434,15 +468,16 @@ video{
 /* ------------------------------- FOOTER CSS -------------------------------------- */
 
 #footer{
-    height: 45vh;
+    min-height: 45vh;
     width: 100%;
     background: linear-gradient(to left bottom, #71d7e0d0 60%, #030770 80%);
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6.5vw;
-    padding: 0 100px;
+    gap: clamp(20px, 4vw, 6.5vw);
+    padding: 40px clamp(20px, 7vw, 100px);
+    flex-wrap: wrap;
 }
 #footer >img{
     position: absolute;
@@ -450,7 +485,7 @@ video{
     height: 100%;
 }
 #f1 img{
-    height: 170px;
+    height: clamp(100px, 12vw, 170px);
     border-radius: 45px;
     opacity: 0.9;
     /* margin-left: -150px; */
@@ -466,21 +501,21 @@ video{
 }
 
 #f2 h3{
-    font-size: 2vw;
+    font-size: clamp(14px, 2vw, 2vw);
     white-space: nowrap;
     color: black;
     font-weight: 900;
     margin-bottom: 8px;
 }
 #f3 h3{
-    font-size: 2vw;
+    font-size: clamp(14px, 2vw, 2vw);
     white-space: nowrap;
     color: black;
     font-weight: 900;
     margin-bottom: 8px;
 }
 #f4 h4{
-    font-size: 2.3vh;
+    font-size: clamp(12px, 1.8vw, 2.3vh);
     white-space: nowrap;
     color: black;
     font-weight: 600;
@@ -492,6 +527,304 @@ video{
     bottom: 9%;
     display: inline-block;
     color: rgb(237, 242, 247);
-    font-size: 15px;
+    font-size: clamp(10px, 1.2vw, 15px);
     font-weight: 550;
+}
+
+/* ============================== RESPONSIVE MEDIA QUERIES ============================== */
+
+/* --- Hide cursor on touch devices --- */
+@media (hover: none) and (pointer: coarse) {
+    #cursor,
+    #cursor-blur {
+        display: none !important;
+    }
+}
+
+/* --- Tablet (≤1024px) --- */
+@media (max-width: 1024px) {
+    #nav {
+        padding: 0px 30px;
+        gap: 20px;
+    }
+
+    #nav-links {
+        gap: 20px;
+    }
+
+    #about-us {
+        padding: 30px 30px;
+    }
+
+    #about-us img {
+        height: 200px;
+        width: 170px;
+    }
+
+    #cards-container img {
+        height: 120px;
+        width: 120px;
+        left: 80px;
+    }
+
+    .card {
+        height: 350px;
+        width: 28%;
+        min-width: 220px;
+    }
+
+    .overlay {
+        padding: 20px;
+        padding-top: 50px;
+    }
+
+    #green-div {
+        padding: 20px 10px;
+    }
+
+    .green-img {
+        width: 12%;
+    }
+
+    #footer {
+        padding: 40px 30px;
+    }
+}
+
+/* --- Small Tablet / Large Phone (≤768px) --- */
+@media (max-width: 768px) {
+    /* Hamburger shows, nav links hide */
+    #menu-btn {
+        display: block;
+    }
+
+    #nav {
+        padding: 0px 20px;
+        height: 70px;
+    }
+
+    #nav img {
+        height: 45px;
+    }
+
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.95);
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        z-index: 100;
+    }
+
+    #nav-links.active {
+        display: flex;
+    }
+
+    #nav-links h4 {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    /* Page 1 */
+    #page1 {
+        padding: 0 15px;
+    }
+
+    #page1 #arrow {
+        left: 5%;
+        bottom: 5%;
+    }
+
+    /* About Us stacks vertically */
+    #about-us {
+        flex-direction: column;
+        padding: 30px 20px;
+        min-height: auto;
+    }
+
+    #about-us img {
+        height: 200px;
+        width: min(80%, 300px);
+    }
+
+    #about-us-in {
+        width: 90%;
+    }
+
+    /* Cards stack */
+    #cards-container {
+        flex-direction: column;
+        margin-top: 30px;
+        min-height: auto;
+        gap: 30px;
+    }
+
+    #cards-container > img {
+        display: none;
+    }
+
+    .card {
+        width: min(90%, 360px);
+        height: 400px;
+    }
+
+    /* Green div stacks */
+    #green-div {
+        flex-direction: column;
+        min-height: auto;
+        padding: 30px 20px;
+        gap: 15px;
+    }
+
+    #green-div h4 {
+        width: 90%;
+    }
+
+    .green-img {
+        width: 40%;
+        height: auto;
+    }
+
+    /* Page 3 */
+    #page3 {
+        min-height: auto;
+        padding: 60px 15px;
+    }
+
+    #colon1 {
+        top: 10%;
+        left: 5%;
+    }
+
+    #colon2 {
+        right: 5%;
+        bottom: 10%;
+    }
+
+    /* Page 4 */
+    #page4 {
+        flex-direction: column;
+        padding: 80px 20px 30px;
+        gap: 20px;
+    }
+
+    .p4card {
+        width: min(90%, 390px);
+    }
+
+    /* Footer */
+    #footer {
+        flex-wrap: wrap;
+        gap: 25px;
+        padding: 40px 20px 60px;
+        min-height: auto;
+        justify-content: center;
+    }
+
+    #footer > img {
+        display: none;
+    }
+
+    #f1,
+    #f2,
+    #f3,
+    #f4 {
+        width: auto;
+        text-align: center;
+    }
+
+    #f2 h3,
+    #f3 h3 {
+        font-size: 16px;
+        white-space: normal;
+    }
+
+    #f4 h4 {
+        font-size: 14px;
+        white-space: normal;
+    }
+
+    #f5 h6 {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        text-align: center;
+        font-size: 12px;
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    #f5 {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* --- Phone (≤480px) --- */
+@media (max-width: 480px) {
+    #page1 h1 {
+        margin-top: 100px;
+    }
+
+    #page1 #arrow {
+        left: 2%;
+        bottom: 3%;
+    }
+
+    #about-us img {
+        height: 180px;
+        width: min(70%, 250px);
+    }
+
+    .card {
+        width: min(92%, 340px);
+        height: 380px;
+    }
+
+    .top {
+        font-size: 22px;
+    }
+
+    .overlay {
+        padding: 15px;
+        padding-top: 40px;
+    }
+
+    .overlay h4 {
+        font-size: 22px;
+    }
+
+    .overlay p {
+        font-size: 14px;
+        margin: 10px 5px;
+    }
+
+    #green-div h4 {
+        width: 100%;
+    }
+
+    .green-img {
+        width: 50%;
+    }
+
+    .p4card {
+        width: min(95%, 360px);
+        height: 160px;
+    }
+
+    #f1 img {
+        height: 80px;
+        border-radius: 25px;
+    }
+
+    #footer {
+        gap: 20px;
+        padding: 30px 15px 50px;
+    }
 }
