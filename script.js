@@ -1,3 +1,5 @@
+ScrollTrigger.config({ ignoreMobileResize: true });
+
 // LOGIC FOR CURSOR — only on non-touch devices
 var crsr = document.querySelector("#cursor");
 var blur = document.querySelector("#cursor-blur");
@@ -62,12 +64,13 @@ gsap.to("#main", {
         trigger: "#main",
         scroller: "body",
         // markers:true,
-        start: " top -30%",
+        start: "top -30%",
         end: "top -75%",
-        scrub: 1
+        scrub: 1,
+        invalidateOnRefresh: true
     }
-
 })
+
 // GSAP FOR INVERTED COMMAS ON PAGE3
 gsap.from("#colon1", {
     x: -70,

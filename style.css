@@ -16,9 +16,10 @@ html,body{
     background-color: #fff;
     color: #2708d7;
   }
-
+  
+/* ------------------------------- Right Scrollbar CSS ------------------------------ */
   body::-webkit-scrollbar {
-    display: block;
+    display: none;
     width: 8px;
     background: #5edbf1;
   }
@@ -67,12 +68,14 @@ html,body{
 
 /* ------------------------------- VIDEO CSS -------------------------------------- */
 
-video{
+.bg-video{
     height: 100%;
     width: 100%;
     object-fit: cover;
     z-index: -1;
     position: fixed;
+    object-fit: cover;
+    pointer-events: none;
 }
 /* ------------------------------- MAIN CSS -------------------------------------- */
 
@@ -296,42 +299,49 @@ video{
     position: relative;
     flex-shrink: 0;
 }
-.top{
+.top {
     position: absolute;
-    font-size: clamp(20px, 3vw, 43px);
+    font-size: clamp(20px, 2.5vw, 30px); 
     font-weight: 800;
     top: 70%;   
-    left: 2%;
+    left: 5%;
+    right: 5%; 
 }
-.overlay{
-    background-color:#b4eed7;
+
+.overlay {
+    background-color: #b4eed7;
     height: 100%;
     width: 100%;
-    padding: 30px;
-    padding-top: 80px;
+    padding: 25px;
     opacity: 0;
     transition: all ease 0.6s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-.overlay h4{
+
+.overlay h4 {
     color: black;
-    font-size: clamp(24px, 3vw, 40px);
+    font-size: clamp(22px, 2.5vw, 32px);
     font-weight: 900;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
-.overlay p{
+
+.overlay p {
     color: black;
-    font-size: clamp(15px, 1.5vw, 21px);
+    font-size: clamp(14px, 1.2vw, 16px);
     font-weight: 500;
-    margin: 15px;
+    margin: 0;
 }
+
 #card1{
-    background-image: url("Assests/card1.jpeg");
+    background-image: url("Assests/card1.webp");
 }
 #card2{
-    background-image: url("Assests/card2.jpg");
+    background-image: url("Assests/card2.webp");
 }
 #card3{
-    background-image: url("Assests//card3.jpg");
+    background-image: url("Assests//card3.webp");
 }
 .card:hover .overlay{
     opacity: 1;
@@ -423,9 +433,10 @@ video{
     position: absolute;
     top: 9%;
     left: 3%;
-    font-family:sans-serif; 
+    font-family:Montserrat; 
     color: black;
-    -webkit-text-stroke:1px #fff;
+    -webkit-text-stroke: 3px #d7eef5;
+    paint-order: stroke fill;
 }
 
 .p4card{
